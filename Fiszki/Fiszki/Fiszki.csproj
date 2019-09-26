@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <PlatformTarget>x86</PlatformTarget>
+    <DefineConstants>DEBUG</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Fiszki\!ListOfTitle.txt" />
+    <None Remove="Fiszki\B2.txt" />
+    <None Remove="Fiszki\Informatyka.txt" />
+    <None Remove="Fiszki\Kuchnia.txt" />
+    <None Remove="Fiszki\Miesiace.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Fiszki\!ListOfTitle.txt" />
+    <EmbeddedResource Include="Fiszki\B2.txt" />
+    <EmbeddedResource Include="Fiszki\Informatyka.txt" />
+    <EmbeddedResource Include="Fiszki\Kuchnia.txt" />
+    <EmbeddedResource Include="Fiszki\Miesiace.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="FiszkaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="StatsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

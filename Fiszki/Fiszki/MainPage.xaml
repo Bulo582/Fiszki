@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Fiszki"
+             Title="Strona Główna"
+             x:Class="Fiszki.MainPage">
+
+    <ContentPage.ToolbarItems >
+        <ToolbarItem x:Name="tbi_mode" Text="{Binding TbiModeTitleDependent}" Priority="0" Order="Secondary" Clicked="Tbi_mode_Clicked"/>
+        <ToolbarItem x:Name="tbi_addFiszka" Text="DodajFiszki" Priority="0" Order="Secondary" Clicked="Tbi_addFiszka_Clicked"/>
+        <ToolbarItem x:Name="tbi_stats" Text="Statystyki" Priority="0" Order="Secondary" Clicked="Tbi_stats_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout x:Name="layout" Spacing="50" VerticalOptions="Center" HorizontalOptions="Center">
+        <Label Text="{Binding TitlePageDependent}"  TextColor="BurlyWood" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Center"/>
+        <Picker x:Name="pik_category" Title="Temat"/>
+        <Button x:Name="btn_start" HorizontalOptions="Center" Text="Start" Clicked="Btn_start_Clicked"/>
+    </StackLayout>
+
+</ContentPage>

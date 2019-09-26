@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Fiszka"
+             x:Class="Fiszki.FiszkaPage">
+
+    <ContentPage.ToolbarItems >
+        <ToolbarItem x:Name="tbi_exit" Text="Zakończ" Priority="0" Order="Secondary" Clicked="Tbi_exit_Clicked"/>
+
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Label x:Name="lbl_title" FontSize="Large" Text="Fiszka" Grid.ColumnSpan="3" Grid.Row="0" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand"/>
+
+            <Label x:Name="lbl_pl" FontSize="Medium" Text="PL" Grid.Column="0" Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Entry x:Name="ent_ang" FontSize="Medium" Placeholder="ANG" Grid.Column="1" WidthRequest="100" Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center"/>
+
+            <Button x:Name="btn_complete" FontSize="Medium" Text="Next" Grid.ColumnSpan="3" Grid.Row="2" Clicked="Btn_complete_Clicked" VerticalOptions="FillAndExpand" HorizontalOptions="Fill"/>
+
+            <ListView x:Name="list_done" SelectionMode="None" SeparatorColor="#5b5d68" HasUnevenRows="True" Grid.ColumnSpan="3" Grid.Row="3" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Label x:Name="l_pl" Text="{Binding polski}" HorizontalOptions="Start" TextColor="Black"/>
+                                <Label x:Name="l_ang" Text="{Binding Angielski}" HorizontalOptions="End" TextColor="{Binding Color}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        <Label x:Name="lbl_count" FontSize="Medium" TextColor="Blue"  Grid.Column="0" Grid.Row="4"/>
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

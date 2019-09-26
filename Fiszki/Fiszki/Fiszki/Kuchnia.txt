@@ -1,0 +1,5 @@
+﻿Kuchnia$
+peeler#obieraczka.
+grater#tarka.
+cutlery#sztućce.
+blender#blender.

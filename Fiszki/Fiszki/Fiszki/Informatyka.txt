@@ -1,0 +1,9 @@
+﻿Informatyka$
+array#tablica.
+constant#stała.
+reference#wzór.
+thread#wątek.
+loop#pętla.
+performance#wydajność.
+independently#niezależnie.
+to split#podzielić.

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Statystyki"
+             x:Class="Fiszki.StatsPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="lbl_nostats" IsEnabled="False" HorizontalOptions="Center" VerticalOptions="Center" Text="" FontSize="Large" />
+            
+            <ListView x:Name="list_stats" SelectionMode="None" SeparatorColor="#5b5d68" HasUnevenRows="True" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Label x:Name="l_title" FontSize="Medium" Text="{Binding Title}" HorizontalOptions="Start" TextColor="Black"/>
+                                <Label x:Name="l_count_done" FontSize="Medium" Text="{Binding DoneString}" HorizontalOptions="Center" TextColor="Green"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
