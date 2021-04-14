@@ -16,6 +16,7 @@ namespace Fiszki.UWP
     {
         public async Task SaveTextAsync(string filename, string folder, string text, bool append)
         {
+            //Tomek update 14.02.2021 - Sellintegro Test;
             if(append)
             {
                 StorageFolder localFolder = ApplicationData.Current.LocalFolder;
